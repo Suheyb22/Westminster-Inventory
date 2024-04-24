@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        .dashboard-header {
+            background-color: #ffdd00; /* Adjusted yellow to match the image */
+            padding: 20px;
+            text-align: center;
+            font-size: 2em; /* Larger text for the header */
+        }
+
+        .dashboard-grid {
+            display: flex; /* Using flex instead of grid to align two columns */
+            justify-content: space-around; /* Spacing around the columns */
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #ffdd00; /* Adjusted yellow to match the image */
+            border-radius: 10px; /* Rounded corners for cards */
+            padding: 40px 20px; /* More vertical padding */
+            text-align: center;
+            width: 45%; /* Width for each card, making 2 cards fill the row with space around */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            transition: transform 0.3s ease; /* Smooth transformation on hover */
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Slightly enlarge cards on hover */
+        }
+
+        .card-icon {
+            font-size: 50px; /* Larger icons */
+            margin-bottom: 10px;
+        }
+
+        /* Adjusting icon colors to be more subtle */
+        .card-icon {
+            color: #333; /* Dark grey color for icons */
+        }
+
+        .card div {
+            font-size: 1.5em; /* Larger text for readability */
+            color: #333; /* Darker text for better contrast */
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-header">
+        <h1>Admin Dashboard</h1>
+    </div>
+    <div class="dashboard-grid">
+        <!-- Left Column -->
+        <div class="card" style="flex-grow: 2;">
+            <div class="card-icon">&#x2714;</div>
+            <div>Active Reservations</div>
+        </div>
+        <div class="card" style="flex-grow: 2;">
+            <div class="card-icon">&#x1F514;</div> <!-- Bell icon for Overdue Items -->
+            <div>Overdue Items</div>
+        </div>
+        <!-- Right Column -->
+        <div class="card" style="flex-grow: 1;">
+            <div class="card-icon">&#x23F0;</div> <!-- Clock icon for Pending Approval -->
+            <div>Pending Approval</div>
+        </div>
+        <div class="card" style="flex-grow: 1;">
+            <div class="card-icon">&#x1F4DA;</div> <!-- Book icon for Equipment Catalog -->
+            <div>Equipment Catalog</div>
+        </div>
+    </div>
+</body>
+</html>

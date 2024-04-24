@@ -1,0 +1,100 @@
+{% extends 'partials/nav.html' %}
+{% extends 'partials/topnav.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .dashboard-header {
+            background-color: #f6ff00; /* Bright yellow background */
+            padding: 20px;
+            text-align: center;
+            font-size: 2em; /* Larger text for the header */
+            margin-bottom: 20px; /* Space below the header */
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid layout */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #f6ff00; /* Bright yellow background for cards */
+            border-radius: 10px; /* Rounded corners for cards */
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        .card-icon {
+            font-size: 50px; /* Larger icons */
+            margin-bottom: 10px;
+        }
+        
+        /* Additional styling for specific icons */
+        .card:nth-child(1) .card-icon {
+            color: #4BB543; /* A green color for the checkmark */
+        }
+
+        .card:nth-child(2) .card-icon {
+            color: #0099FF; /* A blue color for the clock */
+        }
+
+        .card:nth-child(3) .card-icon {
+            color: #FFCC00; /* A yellow color for the bell */
+        }
+
+        .card:nth-child(4) .card-icon {
+            color: #FF6B6B; /* A red color for the calendar */
+        }
+
+        .card div {
+            font-size: 1.5em; /* Larger text for readability */
+            color: #333; /* Darker text for better contrast */
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="dashboard-header">
+            <h1>Admin Dashboard</h1>
+        </div>
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-icon">&#x2714;</div>
+                <div>Active Reservations</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#x23F0;</div> <!-- Clock icon for Pending Approval -->
+                <div>Pending Approval</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#x1F514;</div> <!-- Notification icon for Overdue Items -->
+                <div>Overdue Items</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">&#x1F4C5;</div> <!-- Calendar icon for Upcoming Dates -->
+                <div>Upcoming Dates</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+{% block title %} Admin Page {% endblock %}

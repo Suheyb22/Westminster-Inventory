@@ -1,0 +1,150 @@
+{% extends 'partials/base.html' %}
+
+{% block title %} Inventory Management {% endblock %}
+
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(255, 255, 255);
+    }
+    .container {
+        padding-left: 200px; /* Adjust as necessary to fit your sidebar */
+        padding-right: 20px;
+    }
+    h2 {
+        background-color: #f3f3f3;
+        padding: 10px 15px;
+        border-radius: 5px;
+        display: inline-block;
+        margin-top: 20px;
+    }
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+    .button span {
+        font-size: 20px;
+    }
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+    table, th, td {
+        border: 1px solid black;
+    }
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    /* Modal Styles */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<div class="container">
+    <h2>View Equipment List</h2>
+
+    <button class="button" onclick="document.getElementById('myModal').style.display='block'">
+        Add New Equipment <span>+</span>
+    </button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+            <h2>Add New Equipment</h2>
+            <form>
+                <label for="equipment-name">Equipment Name:</label><br>
+                <input type="text" id="equipment-name" name="equipment-name"><br>
+                <label for="category">Category:</label><br>
+                <input type="text" id="category" name="category"><br>
+                <label for="status">Status:</label><br>
+                <input type="text" id="status" name="status"><br>
+                <label for="serial-number">Serial Number:</label><br>
+                <input type="text" id="serial-number" name="serial-number"><br>
+                <label for="location">Location:</label><br>
+                <input type="text" id="location" name="location"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item ID</th>
+                <th>Device Name</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Sample equipment items similar to the image provided -->
+            <tr>
+                <td>103</td>
+                <td>iPad</td>
+                <td>Tablet</td>
+                <td>available</td>
+                <td>Cavendish</td>
+                <td><a href="#"><img src="link_to_edit_icon" alt="Edit"/></a> <a href="#"><img src="link_to_delete_icon" alt="Delete"/></a></td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>Mac Book</td>
+                <td>Laptop</td>
+                <td>unavailable</td>
+                <td>off site</td>
+                <td><a href="#"><img src="link_to_edit_icon" alt="Edit"/></a> <a href="#"><img src="link_to_delete_icon" alt="Delete"/></a></td>
+            </tr>
+            <!-- More items would be added here dynamically -->
+        </tbody>
+    </table>
+</div>
+{% endblock %}

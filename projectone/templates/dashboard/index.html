@@ -1,0 +1,88 @@
+{% extends 'partials/base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<style>
+    .dashboard-header {
+        background-color: #ffffff; /* Bright yellow background */
+        padding: 20px;
+        text-align: center;
+        font-size: 2em; /* Larger text for the header */
+    }
+
+    .dashboard-container {
+        padding-left: 250px; /* Adjust this value according to the width of your sidebar */
+    }
+
+    .dashboard-grid {
+        display: flex; /* Using flex instead of grid for layout */
+        flex-wrap: wrap; /* Allows the items to wrap onto the next line */
+        gap: 20px; /* Spacing between the items */
+        justify-content: space-evenly; /* Evenly distribute space around items */
+        margin-top: 20px; /* Spacing from the header */
+    }
+
+    .card {
+        background-color: #ffff00; /* Bright yellow background for cards */
+        border-radius: 10px; /* Rounded corners for cards */
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        transition: transform 0.3s ease; /* Smooth transformation on hover */
+        margin-bottom: 20px; /* Space below each card */
+        flex-basis: calc(50% - 40px); /* Subtract the total gap from 100% and divide by 2 */
+    }
+
+    .card:hover {
+        transform: scale(1.08); /* Slightly larger on hover */
+    }
+
+    .card-icon {
+        font-size: 50px; /* Large icon size */
+        margin-bottom: 10px; /* Space below the icon */
+        color: #333; /* Icon color */
+    }
+
+    .card div {
+        font-size: 1.5em; /* Larger text size for readability */
+        color: #333; /* Text color for contrast */
+    }
+
+    /* Media query for smaller screens to ensure single column layout */
+    @media (max-width: 768px) {
+        .dashboard-container {
+            padding-left: 0;
+        }
+
+        .card {
+            flex-basis: 100%;
+        }
+    }
+</style>
+
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h1>Admin Dashboard</h1>
+    </div>
+    <div class="dashboard-grid">
+        <!-- Card elements -->
+        <div class="card">
+            <div class="card-icon">&#x2714;</div>
+            <div>Active Reservations</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">&#x23F0;</div> <!-- Clock icon for Pending Approval -->
+            <div>Pending Approval</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">&#x1F514;</div> <!-- Notification icon for Overdue Items -->
+            <div>Overdue Items</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">&#x1F4C5;</div> <!-- Calendar icon for Upcoming Dates -->
+            <div>Upcoming Dates</div>
+        </div>
+    </div>
+</div>
+{% endblock %}
